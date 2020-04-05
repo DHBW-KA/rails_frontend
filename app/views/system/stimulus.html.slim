@@ -14,13 +14,13 @@ hr
             span.tag.is-dark.is-light YOU
 
   .level-right style="padding: 2rem; max-width: 80%;"
-    .panel.container
+    .panel.container data-controller="chat"
       .panel-heading Chat
-      .panel-block.is-block
+      .panel-block.is-block#ajax-chat
         - Message.all.each do |message|
           p.is-wrapped
             span.tag class="#{"is-info" if message.user == current_user}" = message.user.email
             = message.msg
       .panel-block
         .container
-          = render 'messages/form'
+          = render 'messages/form', form_options: {data: {action: "submit->chat#speak"}}
