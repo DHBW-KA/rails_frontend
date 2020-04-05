@@ -17,10 +17,10 @@
     </h1>
     <nav class="tabs" role="navigation" aria-label="main navigation">
       <ul>
-        <li class="<%= "is-active" if current_page?(action: :ajax) %>"><%= link_to "Ajax", :ajax %></li>
-        <li class="<%= "is-active" if current_page?(action: :actioncable) %>"><%= link_to "Action Cable", :actioncable %></li>
-        <li class="<%= "is-active" if current_page?(action: :stimulus) %>"><%= link_to "Stimulus", :stimulus %></li>
-        <li class="<%= "is-active" if current_page?(action: :vue) %>"><%= link_to "Vue", :vue %></li>
+        <li class="<%= "is-active" if current_page?(controller: 'system', action: :ajax) %>"><%= link_to "Ajax", :ajax %></li>
+        <li class="<%= "is-active" if current_page?(controller: 'system', action: :actioncable) %>"><%= link_to "Action Cable", :actioncable %></li>
+        <li class="<%= "is-active" if current_page?(controller: 'system', action: :stimulus) %>"><%= link_to "Stimulus", :stimulus %></li>
+        <li class="<%= "is-active" if current_page?(controller: 'system', action: :vue) %>"><%= link_to "Vue", :vue %></li>
       </ul>
     </nav>
     <%= yield %>
