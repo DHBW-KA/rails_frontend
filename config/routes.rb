@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :messages
+  resources :users
+  get 'ajax', to: 'system#ajax'
+  get 'stimulus', to: 'system#stimulus'
+  get 'vue', to: 'system#vue'
+  get 'actioncable', to: 'system#actioncable'
+
+  root 'system#ajax'
 end
