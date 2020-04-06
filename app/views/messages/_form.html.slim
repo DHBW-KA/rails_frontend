@@ -1,4 +1,4 @@
-= form_with model: @message, **(form_options||{}) do |f|
+= form_with model: @message, **(self.respond_to?(:form_options) ? form_options : {}) do |f|
   = f.hidden_field :user_id
   .field.has-addons
     .control.has-icons-left.is-expanded
